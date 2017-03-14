@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		#messview {
+				text-align: center;
+				border: 2px solid black;
+				margin-top: 2%;
+				padding: 5%;
+				
+				border-radius: 20px;
+				background-color: aliceblue;
+				font-size: 20px;
+			}
+			#replydiv {
+				text-align: center;
+				border: 2px solid black;
+				margin-top: 2%;
+				padding: 5%;
+				
+				border-radius: 20px;
+				background-color: antiquewhite;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="messview">
+		<p>From:  {{fr}}</p>
+		<p>Subject:  {{subj}}</p>
+		<p>Message:  {{messa}}</p>
+		<input type="button" value="Reply" ng-click="replyshow()"/>
+		<input type="button" value="Back" ng-click="backfn()"/>
+		<div id="replydiv" ng-show="rep">
+			Message<input type="text" ng-model="sendmes" style="margin-left: 52px;height: 111px;width: 90%;border-radius: 5px;word-wrap: break-word;" required /></br></br>
+			<p style="color:red" ng-show="showerror1">Plese enter all the details</p>
+			<input type="button" value="Send" ng-click="sendmessage1()" style="border-radius:4px"/>
+		</div>
+	</div>
+	
+	
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<script src="https://code.angularjs.org/1.5.5/angular.min.js"></script>
+		<script src="angjs.js"></script>
+	</head>
+	<body>
+	<div ng-app = "myangapp">
+		<div ng-controller="myangcont">
+			{{username}}
+			
+			<table border="1" cellpadding="5">
+			<tr ng-repeat="(key, value) in cars | filter:filval | orderBy:'name'"><td>{{cars[key].name | uppercase}}</td><td>{{cars[key].model|uppercase}}</td><td><input value="{{cars[key].name}}"  ng-click="selcars($event)" type="radio" name="carsel"/></td></tr>
+			<tr>
+				<td colspan="3"> <input type="text" ng-model="filval.name"></td>
+			</tr>
+			</table>
+			<p>{{selected_car}}</p>
+		</div>	
+		<p>{{selected_car|customfilter}}</p>
+	</div>
+	
+
+	</body>
+</html>

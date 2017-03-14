@@ -1,0 +1,25 @@
+var app = angular.module('myangapp',[]);
+app.filter('customfilter',function() {
+	return function(value) {
+		return 'my car : '+value;
+	}
+});
+app.controller('myangcont',function($scope,$rootScope) {
+	$scope.username = 'Balaji';
+	$scope.cars =[{
+		name:'mer',
+		model:'c10'
+	},
+	{
+		name:'ben',
+		model:'c20'
+	},
+	{
+		name:'her',
+		model:'c30'
+	}];
+	$scope.selcars = function($event) {
+		 $scope.selected_car = $event.target.value;
+		 $rootScope.selected_car=$scope.selected_car;
+	}; 
+});
